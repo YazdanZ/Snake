@@ -1,17 +1,9 @@
 import pygame, sys, random
-from enum import Enum
+import time
 
 import constants
-import time
 from food import Food
 from snake import Snake
-
-
-class Directions(Enum):
-    UP = 1
-    DOWN = 2
-    RIGHT = 3
-    LEFT = 4
 
 
 class Game:
@@ -28,10 +20,13 @@ class Game:
 
     def game_loop(self):
         while True:
-            # 10 frame per second
+            # 15 frame per second
             self.clock.tick(15)
             self.check_events()
             self.snake.move()
+            if self.snake.ate_food(self.food):
+                self.snake.increment_size()
+                self.food.generate_food(self.snake)
             if self.snake.is_dead():
                 break
             self.update_screen()

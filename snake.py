@@ -7,7 +7,7 @@ class Snake:
 
     def __init__(self, screen):
         self.screen = screen
-        self.body = [(5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10)]
+        self.body = [(10, 10), (11, 11)]
         self.direction = (1, 0)
 
     def check_movement_events(self, event):
@@ -40,3 +40,9 @@ class Snake:
             or head_y in (-1, constants.ROWS)
             or self.body[0] in self.body[1:]
         )
+
+    def ate_food(self, food):
+        return self.body[0] == food.position
+
+    def increment_size(self):
+        self.body.append(self.body[-1])

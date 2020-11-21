@@ -9,13 +9,19 @@ class Food:
 
     def __init__(self, screen):
         self.screen = screen
-        self.generate_food()
+        self.position = (
+            randint(0, constants.ROWS - 1),
+            randint(0, constants.COLUMNS - 1),
+        )
 
-    def generate_food(self):
-        row = randint(0, constants.ROWS - 1)
-        column = randint(0, constants.COLUMNS - 1)
-        self.position = (column, row)
-        self.draw()
+    def generate_food(self, snake):
+        new_position = None
+        while new_position is None:
+            row = randint(0, constants.ROWS - 1)
+            column = randint(0, constants.COLUMNS - 1)
+            if not (row, column) in snake.body:
+                new_position = (row, column)
+        self.position = new_position
 
     def draw(self):
         x = constants.CUBE_WIDTH * self.position[0]
