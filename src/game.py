@@ -1,4 +1,4 @@
-import pygame, sys, random
+import pygame, sys
 import time
 
 import constants
@@ -28,7 +28,8 @@ class Game:
                 self.snake.increment_size()
                 self.food.generate_food(self.snake)
             if self.snake.is_dead():
-                break
+                time.sleep(0.5)
+                self.start_game()
             self.update_screen()
 
     def set_screen(self):

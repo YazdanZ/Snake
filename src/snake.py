@@ -7,7 +7,12 @@ class Snake:
 
     def __init__(self, screen):
         self.screen = screen
-        self.body = [(10, 10), (11, 11)]
+
+        # give the snake an initial direction and body
+        self.body = [
+            (constants.COLUMNS // 4, constants.ROWS // 4),
+            (constants.COLUMNS // 4 + 1, constants.ROWS // 4),
+        ]
         self.direction = (1, 0)
 
     def check_movement_events(self, event):
