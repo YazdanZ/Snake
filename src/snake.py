@@ -11,7 +11,7 @@ class Snake:
         # give the snake an initial direction and body
         self.body = [
             (constants.COLUMNS // 4, constants.ROWS // 4),
-            (constants.COLUMNS // 4 + 1, constants.ROWS // 4),
+            (constants.COLUMNS // 4, constants.ROWS // 4),
         ]
         self.direction = (1, 0)
 

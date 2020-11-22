@@ -1,5 +1,4 @@
-import pygame, sys
-import time
+import pygame, sys,time
 
 import constants
 from food import Food
