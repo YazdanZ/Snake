@@ -9,5 +9,5 @@ Snake game written in python using pygame and the [Nord](https://github.com/arct
 
 ### Preview 
 <p align="center">
-  <img src="https://github.com/Unixado/Snake/blob/master/Preview.gif">
+  <img src="https://github.com/yazdanz/Snake/blob/master/Preview.gif">
 </p>
